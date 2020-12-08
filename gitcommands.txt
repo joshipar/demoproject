@@ -22,6 +22,14 @@ Add updates the index using the current content found in the working tree and th
 
 git diff : To compare the files/directories for modification
 
+git rm --cached <filename> : It removes the files from staging environment or you can say it removes the index 
+
+git commit -m "first version of file"
+It commits the file into the repository a new version of my repsitory is created
+
+git log - List all the commits done in the repository/Display version history
+
+
 
 
 
