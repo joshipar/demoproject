@@ -1,0 +1,6 @@
+Version Control System: Management of changes to documents , computer programs, large websites and other form of information
+
+There are 2 types of Version control systems
+
+1. Centralized Version Control Systems
+2. Distributed Version Control systems

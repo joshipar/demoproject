@@ -1,0 +1,28 @@
+List of commonly used git commands
+
+git --version
+Tells us the current installed version of git
+
+git init
+Used to intialize the git repository and if repository already exists then it re-initialize it
+
+git status
+It lists all the modified or new files which are ready to add to the local repository
+
+git add <directory>
+
+git add <filename>
+
+git add -A
+Index all files in directory
+
+git add *
+
+Add updates the index using the current content found in the working tree and then prepares the content in the staging area for the next commit
+
+git diff : To compare the files/directories for modification
+
+
+
+
+
