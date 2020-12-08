@@ -1,0 +1,244 @@
+Patrik Debois - 2007 - Introduced the term Devops
+Devops is a set of philosophies, practices and tools that help and organization to deliver better products faster by facilitating the integration of the development and operation functions
+
+Key Benefits of using Devops
+1. More focus on automation
+2. Integrated Change Management
+3. Continuous Integration
+4. Automated Testing
+5. Continuous Deployment
+6. Application Monitoring
+7. Production support
+8. Active stakeholder participation
+
+Disadvantages?
+1. Devops professional are less available
+2. Developing with devops is very expensive
+3. lack of devops knowledge can be a problem as it can messup the entire project
+4. Adopting new Devops technology into the industry is hard to manage in short time
+
+
+
+What is version control system?
+Version control is the management of changes to documents , computer programs, large websites and other collection of information
+
+Two types version control systems
+
+1. CVS (Centralized version control system)
+2. DVCS (Distributed version control systems)
+
+What is Continuous Integration?
+It is a software practice in which each member of development team integrates his work with that produced by others on a continuous basis
+
+Problems:
+
+- It took days or even weeks for software developers to integrate their code and merge the changes
+
+- It creates merge conflicts
+- It creates stubborn bugs
+- Duplicated efforts
+
+Step 1: Split the entire code into segments
+Step 2: Keep small segments of manageble code
+Step 3: Integrate the segmented code, multiple times of a days
+Step 4: Adopt a continuous integration methodolgy to cordinate with your team
+
+Benefits of Continuous Integration:
+1. Reduced Integration Risk: 
+2. Higher Code Quality:
+3. The code in version control works:
+4. Reduced friction between team members
+5. Easy for QA team
+6. Less Time deploying
+
+Principle of Continuous Integration(CI)
+1. The maintaineance of a code repository
+2. Automating the build process
+3. Making the build self-testing
+4. Everyone commiting to the baseline every day
+5. Every commit to baseline should be built
+6. Keeping the build fast
+7. Testing in a clone of the production environment
+8. Make it easy to get the latest deliverables
+9. Everyone can see the results of the latest build
+10.Automatic Deployment
+
+Requiremts for CI
+1. Version control System
+2. Server(VM)
+3. Hosted CI Tool Solution
+4. Tools(Jenkins, Bamboo, Teamcity...)
+
+How does continuous Integration works?
+1. Developers input code into their private terminals
+2. After that is done, they commit the changes to the shared repository
+3. The CI server monitors the repository and analyzes the changes as they occur
+4. Continuous Integration builds the system and runs unit and integration tests
+5. Server also releases deployable artefacts for testing
+6. The CI Server assigns a build tag to the version of the code it is just built
+7. The CI server gives the team reports of the sucessful build
+8. if the build or tests fail, the server alerts the development team
+9. The team will fix issue as soon as is possible
+10. It continues to integrate and run tests throughout the entire project
+
+Tools:
+Jenkins
+Teamcity
+Travis
+
+Jenkins Features
+
+1. Adoption
+2. Plugins
+
+Continuous Deployment?
+It is an approach of releasing software on the production servers continuously in automated fashion
+
+Benefits of Continuous Deployment:
+Speed: Deployment does not pause for releases so it is developed really fast
+Secure: Releases are less risky as before releasing testing is performed and all the bugs are solved
+Continuous Improvements: Continuous deployment support continuous improvements which are visible to customers
+
+Containerization is a type of virtualization which brings virtualization to the operating system level.While virtualization brings abstraction to the hardware, Containerization brings abstraction to the operating system
+
+Dockerfile, Docker images and Docker Containers are 3 important terms tha you need to understand while using docker
+
+Dockerfile: A dockerfile is a text document which contains all the commands that a user can call on the command line to assemble an images, so Docker can build images automatically by reading the instructions from a dockerfile, you can use "docker build" to create an automated build to execute several command line instructions in succession
+
+Docker image: In layman terms, Docker Image can be compared to a template which is used to create Docker Containers.
+
+To run the image and to create a container we can use "docker run"
+
+Docker images are stored in the docker registry
+
+
+Docker Container: It is a running instance of a docker image. It holds the entire package needed to run the application
+
+Docker Compose - Is a YAML file which contains details about the services, networks and volumes for setting up the application
+
+Docker Swarm - It is a technique to create and maintain a cluster of Docker engines.
+
+Docker Commands
+
+1. docker -version
+It will tell you current version of your docker
+
+2. docker help
+It will give you a full listing of commands that the docker client can understand
+
+3. docker command --help
+It will give a help for a specific command
+
+4. docker info - It will display several pieces of information about OS
+
+5. docker run -t -i busybox - It will create an instance (container) of image busybox 
+
+It first checks if image is available local repository , if it doesnot it will pull image from the docker hub.
+
+docker ps : This will give you a list of all running containers. you will notice from the output that there is container busybox running 
+
+docker images - It will list all the images downloaded on your local docker repository
+
+docker start <container id>
+docker stop <container id>
+
+docker pull httpd - This will only download the httpd image from docker hub to docker local repository
+
+
+docker run -it --name mycontainer1 ubuntu:latest
+
+inside ubuntu 
+#=> apt-get update
+=>apt-get install git
+=> git --version
+=> exit
+
+docker ps -a
+docker commit mycontainer1 ubuntu-git
+docker tag ubuntu-git dockeruseradmin/ubuntu-git
+docker push dockeruseradmin/ubuntu-git
+
+Commands to try by students(self learning)
+docker –version
+docker pull
+docker run
+docker ps
+docker ps -a
+docker exec
+docker stop
+docker kill
+docker commit
+docker login
+docker push
+docker images
+docker rm
+docker rmi
+docker build
+
+
+Kubernets Features
+1. Automatic Binpacking: Kubernetes automatically packages your application and schedules the containers based on their requirements and available resources while not sacrificing availability. Kubernetes balances between critical and best effort workloads
+
+2. Service Discovery and Load Balancing: There is no need to worry about networking and communication because kubernetes automatically assign IP address to containers and single DNS name for a set of containers, that can load balance traffic inside the cluster
+
+3. Storage Orchestration: You can mount the storage system of your choice. You can either opt for local storage or choose a public cloud such as GCP, AWS, Azure. You can also use shared network storage system such as NFS, iSCSI etc..
+
+4. Self-healing: Kubernetes can automatically restart containers that fail during execution and kills those containers that don't respond to user-defined health checks.But if node itself die, then it replaces and reschedules those failed containers on other available nodes
+
+5. Secret and Configuration Management: It can help you deploy and update secrets and application configuration without rebuilding your image and without exposing secrets in your stack configuration.
+
+6. Batch Execution: It can manage batch and CI workloads, thus replacing containers that fail, if needed.
+
+7. Horizontal Scaling: Using a single command on CLI it will scale up/down the containers , else you can use Kubernetes dashboard on UI
+
+8. Automatic Rollbacks and Rollouts: It progressively rolls out changes and updates to your application or its configuration, by ensuring that not all instances are worked at the same instance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
